@@ -1,34 +1,25 @@
-import React, { useContext } from "react";
-import BasicInformation from "./components/BasicInformation";
-import ContactDetails from "./components/ContactDetails";
-import Display from "./components/Display";
-import JobPreferences from "./components/JobPreferences";
-import { WizardContext } from "./context/WizardContext";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from "./components/Home";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 
 function App() {
-
-const {currentStep, reportData} = useContext(WizardContext);
-
-  const goToStep = (step) =>{
-    switch(step){
-    case 1:
-      return <BasicInformation />
-    case 2:
-      return <ContactDetails />
-    case 3:
-      return <JobPreferences />
-    default:
-    }
-  }
-
   return (
     <div className="App">
-      <div>
-        <p>Create Account to Apply</p>
-        {goToStep(currentStep)}
-        <br />
-        {reportData.length > 0 ? <Display /> : ''}
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path = '/signup'>
+            <Signup />
+          </Route>
+          <Route exact path = '/signin'>
+            <Signin />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
