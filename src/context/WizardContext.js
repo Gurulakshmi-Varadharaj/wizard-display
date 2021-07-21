@@ -16,6 +16,11 @@ const WizardContextProvider = ({children})=>{
     location: ""
   }]);
 
+  const [signInData, setSignInData] = useState([{
+    email: "",
+    password: ""
+  }])
+
   const [reportData, setReportData] = useState([]);
 
   const continueStep = () => {
@@ -39,7 +44,7 @@ const WizardContextProvider = ({children})=>{
   };
 
   return(
-    <WizardContext.Provider value={{currentStep, setCurrentStep, continueStep, previousStep, handleChange, userInput, submitReport, reportData}}>
+    <WizardContext.Provider value={{currentStep, signInData, setCurrentStep, continueStep, previousStep, handleChange, userInput, submitReport, reportData}}>
       {children}
     </WizardContext.Provider>
   );
