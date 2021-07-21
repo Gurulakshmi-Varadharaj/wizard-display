@@ -8,6 +8,7 @@ const WizardContextProvider = ({children})=>{
     firstname: "",
     lastname: "",
     dob: "",
+    password: "",
     email: "",
     phone: "",
     linkedin: "",

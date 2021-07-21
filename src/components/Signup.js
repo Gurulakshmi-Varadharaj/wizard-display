@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { WizardContext } from "../context/WizardContext";
 import BasicInformation from "./BasicInformation";
 import ContactDetails from "./ContactDetails";
-import Display from "./Display";
 import JobPreferences from "./JobPreferences";
 
 const Signup = () => {
@@ -21,12 +20,10 @@ const Signup = () => {
   }
 
   return (
-    <div>
-        <p>Create Account to Apply</p>
+      <div>
+        <h2 style={{color:"Blue", textAlign:"Center"}}>Create Account to Apply</h2>
         {goToStep(currentStep)}
-        <br />
-        {reportData.length > 0 ? <Display /> : ''}
-    </div>
+      </div>
   );
 };
 
