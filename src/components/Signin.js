@@ -22,7 +22,7 @@ const Signin = () => {
             <br/>
             <input className="form-control" type="password" name="password" placeholder='Password' value={signInData.password}/>
             <br/>
-            <button className="btn btn-info">Sign in</button>
+            <button className="btn btn-info" onClick={()=>{history.push('/display')}}>Sign in</button>
           </div>
           </form>
         </div>

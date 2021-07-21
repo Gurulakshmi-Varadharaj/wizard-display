@@ -1,12 +1,23 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { WizardContext } from "../context/WizardContext";
 import "./Wizard.scss";
 
 const Display = () => {
+
   const {reportData} = useContext(WizardContext);
+
+  let history = useHistory();
+
   return(
-  <div>
-    <table width="1000px">
+    <div className="row">
+    <div className="row justify-content-center align-items-center bg-info" style={{height:"120px"}}>
+      <h3 className="col-sm-8" style={{textAlign:"Center"}}>Result!</h3>
+      <button className="col-sm-4" style={{width:"80px"}} onClick={()=>{history.push('/signin')}}>Logout</button>
+    </div>
+  <div className="table">
+    <br />
+    <table width="1000px" className="container">
       <tr>
         <th>Firstname</th>
         <th>Lastname</th>
@@ -30,6 +41,7 @@ const Display = () => {
         </tr>
         ))}
     </table>
+  </div>
   </div>
   );
 };
