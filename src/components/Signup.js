@@ -20,10 +20,10 @@ const Signup = () => {
   }
 
   return (
-      <div>
-        <h2 style={{color:"Blue", textAlign:"Center"}}>Create Account to Apply</h2>
-        {goToStep(currentStep)}
-      </div>
+    <div>
+      <h3 style={{color:"Black", textAlign:"Center"}}>Create Account to Apply</h3>
+      {goToStep(currentStep)}
+    </div>
   );
 };
 
