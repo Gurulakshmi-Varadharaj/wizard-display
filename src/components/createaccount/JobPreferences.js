@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { WizardContext } from "../context/WizardContext";
+import { WizardContext } from "../../context/WizardContext";
 
 const JobPreferences = ()=>{
 
@@ -8,7 +8,7 @@ const JobPreferences = ()=>{
   return (
     <form autoComplete="off" onSubmit={event => event.preventDefault()}>
         <div className="form-group">
-          <h4 style={{color:"Black"}}>Job Preferences</h4>
+          <h4>Job Preferences</h4>
           <select className="form-control form-select" id="industry" name="industry" onChange={handleChange} value={userInput.industry}>
             <option value="">Select Industry</option>
             <option value="Information Technology">Information Technology</option>

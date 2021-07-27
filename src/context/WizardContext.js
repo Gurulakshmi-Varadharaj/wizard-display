@@ -16,10 +16,10 @@ const WizardContextProvider = ({children})=>{
     location: ""
   }]);
 
-  const [signInData, setSignInData] = useState([{
+  const [signInData, setSignInData] = useState({
     email: "",
     password: ""
-  }])
+  });
 
   const [reportData, setReportData] = useState([]);
 

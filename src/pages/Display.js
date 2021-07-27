@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { WizardContext } from "../context/WizardContext";
-import "./Wizard.scss";
+import "../styles/Display.scss";
 
 const Display = () => {
 
@@ -10,14 +10,14 @@ const Display = () => {
   let history = useHistory();
 
   return(
-    <div className="row">
-      <div className="row justify-content-center align-items-center bg-info" style={{height:"120px"}}>
-        <h1 className="col-sm-8" style={{textAlign:"Center"}}>Profile!</h1>
-        <button className="col-sm-4" style={{width:"80px"}} onClick={()=>{history.push('/signin')}}>Logout</button>
+    <div className="row display">
+      <div className="row justify-content-center align-items-center bg-info height">
+        <h1 className="col-sm-11 center">Profile!</h1>
+        <button className="col-sm-4 button-width" onClick={()=>{history.push('/')}}>Logout</button>
       </div>
       <div className="table">
         <br />
-        <table width="1000px" className="container">
+        <table className="container">
           <tr>
             <th>Firstname</th>
             <th>Lastname</th>

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { WizardContext } from "../context/WizardContext";
+import { WizardContext } from "../../context/WizardContext";
 
 const BasicInformation = ()=>{
 
@@ -8,7 +8,7 @@ const BasicInformation = ()=>{
   return (
     <form autoComplete="off" onSubmit={event => event.preventDefault()}>
         <div className="form-group">
-          <h4 style={{color:"Black"}}>Basic Information</h4>
+          <h4>Basic Information</h4>
           <input className="form-control" name="firstname" placeholder='First Name' onChange={handleChange} value={userInput.firstname} />
           <br/>
           <input className="form-control" name="lastname" placeholder='Last Name' onChange={handleChange} value={userInput.lastname}/>

@@ -1,0 +1,22 @@
+.display {
+  .right {
+    text-align: right;
+  }
+  .center {
+    text-align: center;
+  }
+  .height {
+    max-height: 120px;
+    height: 120px;
+  }
+  .button-width {
+    max-width: 80px;
+    width: 80px;
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}

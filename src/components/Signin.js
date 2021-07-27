@@ -1,34 +1,48 @@
 import React, { useContext } from 'react';
 import { WizardContext } from '../context/WizardContext';
 import { useHistory } from 'react-router-dom';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 const Signin = () => {
 
-  const { signInData } = useContext(WizardContext);
+  const {signInData} = useContext(WizardContext);
+
   let history = useHistory();
 
+  const validationSchema = Yup.object({
+    email: Yup.string().email('Invalid email format').required('Required!'),
+    password: Yup.string().required('Required!')
+  });
+
+  const onSubmit = (values) =>{
+    history.push('/display');
+  };
+
   return(
-    <div className="row">
-      <div className="row justify-content-center align-items-center bg-info" style={{height:"120px"}}>
-        <h1 className="col-sm-8" style={{textAlign:"center"}}>Login!</h1>
-        <button className="col-sm-4" style={{width:"80px"}} onClick={()=>{history.push('/')}}>Home</button>
-      </div>
       <div className="row justify-content-center align-items-center">
-        <div style={{width:"500px"}}>
+        <div>
           <br/>
-          <form autoComplete="off" onSubmit={event => event.preventDefault()}>
-            <div className="form-group">
-              <h4 style={{color:"Black"}}>Credentials</h4>
-              <input className="form-control" name="email" placeholder='Email id' value={signInData.email} />
-              <br/>
-              <input className="form-control" type="password" name="password" placeholder='Password' value={signInData.password}/>
-              <br/>
-              <button className="btn btn-info" onClick={()=>{history.push('/display')}}>Sign in</button>
-            </div>
-          </form>
+          <Formik initialValues={signInData} validationSchema={validationSchema} onSubmit={onSubmit}>
+            {({values})=>(
+            <Form>
+              <div className="form-group">
+                <h4>Credentials</h4>
+                <Field className="form-control" type="email" name="email" placeholder='Email id' />
+                <ErrorMessage className="errorMsg" name="email"/>
+                <br/>
+                <Field className="form-control" type="password" name="password" placeholder='Password' />
+                <div>
+                <ErrorMessage name="password"/>
+                </div>
+                <br/>
+                <button className="btn btn-info" type='submit'>Sign in</button>
+              </div>
+            </Form>
+          )}
+          </Formik>
         </div>
       </div>
-    </div>
   );
 };
 
