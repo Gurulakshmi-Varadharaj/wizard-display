@@ -1,7 +1,18 @@
-import {pageRoutes} from './pageRoutes';
+import Display from "../../pages/Display";
+import Home from "../../pages/Home";
+import Signup from "../../pages/Signup";
 
-const routes = [
-  ...pageRoutes
-]
-
-export default routes;
+export const routes = [
+  {
+    path: '/',
+    component: Home,
+  },
+  {
+    path: '/signup',
+    component: Signup,
+  },
+  {
+    path: '/display',
+    component: Display,
+  },
+];

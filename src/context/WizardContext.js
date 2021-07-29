@@ -11,7 +11,6 @@ const WizardContextProvider = ({children})=>{
     password: "",
     email: "",
     phone: "",
-    linkedin: "",
     industry: "",
     location: ""
   }]);
@@ -20,6 +19,8 @@ const WizardContextProvider = ({children})=>{
     email: "",
     password: ""
   });
+
+  const [errorMsg, setErrorMsg] = useState('');
 
   const [reportData, setReportData] = useState([]);
 
@@ -41,10 +42,11 @@ const WizardContextProvider = ({children})=>{
     setReportData([...reportData, userInput]);
     setUserInput('');
     setCurrentStep(1);
+    localStorage.setItem('email', userInput.email);
   };
 
   return(
-    <WizardContext.Provider value={{currentStep, signInData, setCurrentStep, continueStep, previousStep, handleChange, userInput, submitReport, reportData}}>
+    <WizardContext.Provider value={{currentStep, signInData, errorMsg, setCurrentStep, setErrorMsg, continueStep, previousStep, handleChange, userInput, submitReport, reportData}}>
       {children}
     </WizardContext.Provider>
   );

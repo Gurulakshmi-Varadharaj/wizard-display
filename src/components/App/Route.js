@@ -8,7 +8,7 @@ const AppRoutes = ({
   return(
     <Route 
     path={path}
-    render={(props) => <Component {...props}/>}
+    component={Component}
     />
   );
 }

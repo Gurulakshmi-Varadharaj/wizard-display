@@ -9,11 +9,16 @@ const Display = () => {
 
   let history = useHistory();
 
+  const onClickLogout = () => {
+    localStorage.clear();
+    history.push('/');
+  }
+
   return(
     <div className="row display">
       <div className="row justify-content-center align-items-center bg-info height">
         <h1 className="col-sm-11 center">Profile!</h1>
-        <button className="col-sm-4 button-width" onClick={()=>{history.push('/')}}>Logout</button>
+        <button className="col-sm-4 button-width" onClick={onClickLogout}>Logout</button>
       </div>
       <div className="table">
         <br />
@@ -24,7 +29,6 @@ const Display = () => {
             <th>Date of Birth</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Linkedin</th>
             <th>Industry</th>
             <th>Location</th>
           </tr>
@@ -35,7 +39,6 @@ const Display = () => {
               <td>{data.dob}</td>
               <td>{data.email}</td>
               <td>{data.phone}</td>
-              <td>{data.linkedin}</td>
               <td>{data.industry}</td>
               <td>{data.location}</td>
             </tr>
