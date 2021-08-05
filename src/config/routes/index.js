@@ -1,4 +1,4 @@
-import Display from "../../pages/Display";
+import Dashboard from "../../pages/Dashboard";
 import Home from "../../pages/Home";
 import Signup from "../../pages/Signup";
 
@@ -13,6 +13,6 @@ export const routes = [
   },
   {
     path: '/display',
-    component: Display,
+    component: Dashboard,
   },
 ];
